@@ -1,0 +1,42 @@
+$navMainColor: #006A81;
+$navTextColor: #fff;
+
+.logo {
+  font-size: 22px;
+
+  .logo_title {
+    background-color: #006A81;
+    color: $navTextColor;
+  }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  background-color: $navMainColor;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.navbar_btn {
+  display: flex;
+  flex-direction: row;
+  .navbar_auth {
+    padding-right: 15px;
+    font-size: 18px;
+    color: $navTextColor;
+    background-color: $navMainColor;
+    text-decoration: none;
+  }
+}
+
+.navbar-registration {
+  font-size: 18px;
+  background-color: $navMainColor;
+  color: $navTextColor;
+  text-decoration: none;
+}
