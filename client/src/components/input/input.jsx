@@ -1,10 +1,14 @@
 import React from 'react';
 import '../authorization/authorization.scss'
 
-const Input = ({type, placeholder, value}) => {
+const Input = (props) => {
+
     return (
         <div className={'input'}>
-            <input type={type} placeholder={placeholder} value={value}/>
+            <input onChange={(e)=>props.setValue(e.target.value)}
+                   value={props.value}
+                   type={props.type}
+                   placeholder={props.placeholder} />
         </div>
     );
 };
