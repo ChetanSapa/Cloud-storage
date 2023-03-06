@@ -6,7 +6,7 @@ $navTextColor: #fff;
 
   .logo_title {
     background-color: #006A81;
-    color: $navTextColor;
+    color: $navMainColor;
   }
 }
 
@@ -26,11 +26,12 @@ $navTextColor: #fff;
   display: flex;
   flex-direction: row;
   .navbar_auth {
-    padding-right: 15px;
+    padding-left: 15px;
     font-size: 18px;
     color: $navTextColor;
     background-color: $navMainColor;
     text-decoration: none;
+    border: none;
   }
 }
 
