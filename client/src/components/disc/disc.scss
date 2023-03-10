@@ -1,0 +1,25 @@
+$mainColor: #006A81;
+$textColor: #fff;
+
+.disc-page{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .disc-nav{
+    display: flex;
+    width: 100%;
+    padding: 1% 1%;
+    .disc-btn{
+      font-size: 15px;
+      padding: 10px 15px;
+      border:$mainColor ;
+      border-radius: 10px;
+      color: $textColor;
+      background-color: $mainColor;
+      cursor: pointer;
+    }
+    .disc-btn:nth-child(2){
+      margin-left: .5%;
+    }
+  }
+}

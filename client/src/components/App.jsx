@@ -4,6 +4,7 @@ import './app.scss'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Registration from './authorization/Registration'
 import Authorization from './authorization/Authorization'
+import Disc from './disc/Disc'
 import {useSelector, useDispatch} from 'react-redux'
 import {auth} from '../actions/user'
 
@@ -20,11 +21,15 @@ function App() {
         <BrowserRouter>
             <div className={'app'}>
                 <Navbar/>
-                {!isAuth &&
+                {!isAuth ?
                     <Routes>
                         <Route path={'/login'} exact element={<Authorization/>}/>
                         <Route path={'/registration'} element={<Registration/>}/>
-                        {/*<Route path="*" element={<Navigate to ="/" />}/>*/}
+                        <Route path="*" element={<Navigate to ="/login" />}/>
+                    </Routes>:
+                    <Routes>
+                        <Route path={'/'} exact element={<Disc/>}/>
+                        <Route path="*" element={<Navigate to ="/" />}/>
                     </Routes>
                 }
             </div>

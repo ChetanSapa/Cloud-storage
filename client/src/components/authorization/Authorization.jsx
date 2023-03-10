@@ -16,7 +16,7 @@ const Authorization = () => {
             <Input value={email} setValue={setEmail} type={'email'} placeholder={'Type your email...'}/>
             <Input value={password} setValue={setPassword} type={'password'} placeholder={'Type your password...'}/>
             <div className={'auth-card-btns'}>
-                <button onClick={()=>dispatch(login(email, password))}>Login</button> Don't have an account?
+                <button onClick={()=>dispatch(login(email, password))}>Login</button> <span>Don't have an account?</span>
                 <button><NavLink className={'auth-card-btn'} to={'/registration'}>Registration</NavLink></button>
             </div>
         </div>

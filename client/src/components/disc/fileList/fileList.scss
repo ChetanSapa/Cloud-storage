@@ -1,0 +1,24 @@
+$mainColor: #006A81;
+$textColor: #fff;
+$text: "Droid Sans Mono";
+
+.file-list{
+  padding: 1% 1%;
+  border-top: 1px solid $mainColor;
+  font-family: $text;
+  width: 100%;
+}
+.file-list-info{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1%;
+  //border-bottom: 1px solid $mainColor;
+  .file-info-name{
+    padding-left: 3.2%;
+  }
+}
+.file-list-info-creation{
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}

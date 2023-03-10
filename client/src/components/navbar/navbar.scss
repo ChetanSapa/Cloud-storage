@@ -2,11 +2,11 @@ $navMainColor: #006A81;
 $navTextColor: #fff;
 
 .logo {
-  font-size: 22px;
+  font-size: 24px;
 
   .logo_title {
     background-color: #006A81;
-    color: $navMainColor;
+    color: $navTextColor;
   }
 }
 
@@ -27,7 +27,7 @@ $navTextColor: #fff;
   flex-direction: row;
   .navbar_auth {
     padding-left: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: $navTextColor;
     background-color: $navMainColor;
     text-decoration: none;

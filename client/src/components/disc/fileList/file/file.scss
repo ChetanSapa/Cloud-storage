@@ -1,0 +1,37 @@
+$mainColor: #006A81;
+$textColor: #fff;
+$text: "Droid Sans Mono";
+
+.file{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  font-family: $text;
+  .file-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 49%;
+    .file-title-name{
+      padding-left: 2%;
+    }
+    img{
+      width: 30px;
+      margin-bottom: 4px;
+    }
+  }
+  .file-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 49%;
+    .file-info-date{
+      padding-right: 10%;
+    }
+    .file-info-size{
+      white-space: nowrap;
+    }
+  }
+}
