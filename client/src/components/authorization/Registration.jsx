@@ -15,8 +15,9 @@ const Registration = () => {
             <Input value={password} setValue={setPassword} type={'password'} placeholder={'Type your password...'}/>
             {/*<Input type={'password'} placeholder={'Confirm your password...'}/>*/}
             <div className={'auth-card-btns'}>
-                <button onClick={() => registration(email, password)}>Registration</button> <span>or if you have account</span>
-                <button><NavLink className={'auth-card-btn'} to={'/login'}>Login</NavLink></button>
+                <button onClick={() => registration(email, password)}>Registration</button>
+                <span>have account?</span>
+                <NavLink to={'/login'}>Login</NavLink>
             </div>
         </div>
     );

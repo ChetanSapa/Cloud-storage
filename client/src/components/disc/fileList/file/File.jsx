@@ -1,17 +1,18 @@
 import React from 'react';
 import './file.scss'
-import folder from '../../../../assets/folder.png'
+import folderImg from '../../../../assets/folder.png'
+import fileImg from '../../../../assets/file.png'
 
-const File = () => {
+const File = ({file}) => {
     return (
         <div className={'file'}>
             <div className="file-title">
-                <img src={folder} alt=""/>
-                <div className="file-title-name">Folder</div>
+                <img src={file.type === 'dir'? folderImg : fileImg} alt={file.name}/>
+                <div className="file-title-name">{file.name}</div>
             </div>
             <div className="file-info">
-                <div className="file-info-date">10.03.20023</div>
-                <div className="file-info-size">0 bit</div>
+                <div className="file-info-date">{file.date.slice(0,10)}</div>
+                <div className="file-info-size">{file.size}</div>
             </div>
         </div>
     );
