@@ -17,7 +17,7 @@ const FileList = () => {
             {/*        <div className="file-info-size">Size</div>*/}
             {/*    </div>*/}
             {/*</div>*/}
-            {files.map(file => <File key={file.id} file={file}/>)}
+            {files.map(file => <File key={file._id} file={file}/>)}
         </div>
     );
 };

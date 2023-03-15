@@ -12,7 +12,7 @@ const File = ({file}) => {
             </div>
             <div className="file-info">
                 <div className="file-info-date">{file.date.slice(0,10)}</div>
-                <div className="file-info-size">{file.size}</div>
+                <div className="file-info-size">{file.size} bit </div>
             </div>
         </div>
     );
