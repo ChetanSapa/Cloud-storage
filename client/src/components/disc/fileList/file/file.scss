@@ -16,6 +16,10 @@ $text: "Droid Sans Mono";
     width: 49%;
     .file-title-name{
       padding-left: 2%;
+      cursor: pointer;
+      &:hover{
+        color: lighten(black, 50%);
+      }
     }
     img{
       width: 30px;
