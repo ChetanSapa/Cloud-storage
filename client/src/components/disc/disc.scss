@@ -7,7 +7,8 @@ $textColor: #fff;
   width: 100%;
   .disc-nav{
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    width: 24%;
     padding: 1% 1%;
     .disc-btn{
       font-size: 15px;
@@ -17,10 +18,22 @@ $textColor: #fff;
       color: $textColor;
       background-color: $mainColor;
       cursor: pointer;
+      input{
+        display: none;
+      }
+      label{
+        font: 400 15px Arial;
+        padding: 10px 15px;
+        border:$mainColor ;
+        border-radius: 10px;
+        color: $textColor;
+        background-color: $mainColor;
+        cursor: pointer;
+      }
     }
-    .disc-btn:nth-child(2){
-      margin-left: .5%;
-    }
+    //.disc-btn:nth-child( 3){
+    //  margin-left: .5%;
+    //}
   }
 }
 .popup{

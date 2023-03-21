@@ -1,15 +1,14 @@
 import {React, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {getFiles, createDir} from '../../actions/file'
+import {getFiles, uploadFile} from '../../actions/file'
 import FileList from './fileList/FileList'
 import Popup from './Popup'
-import {setPopupDisplay, setCurrentDir} from '../../reducers/fileReducer'
+import {setCurrentDir, setPopupDisplay} from '../../reducers/fileReducer'
 import './disc.scss'
 
 const Disc = () => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
-    const files = useSelector(state => state.files.files)
     const dirStack = useSelector(state => state.files.dirStack)
 
     useEffect(() => {
@@ -23,6 +22,11 @@ const Disc = () => {
         const backDir = dirStack.pop()
         dispatch(setCurrentDir(backDir))
     }
+    const fileUploadHandler = (event) => {
+        const files = [...event.target.files]
+        console.log(files)
+        files.forEach(file => dispatch(uploadFile(file, currentDir)))
+    }
 
     return (
         <div className={'disc-page'}>
@@ -31,6 +35,10 @@ const Disc = () => {
                     backClickHandler()
                 }}>{'<'}</button>
                 <button className="disc-btn" onClick={() => popupHandler()}>Create</button>
+                <div className={'disc-btn'}>
+                    <label htmlFor="uploadFile">Upload file</label>
+                    <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file" id={'uploadFile'}/>
+                </div>
             </div>
             <FileList/>
             <Popup/>

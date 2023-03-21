@@ -8,17 +8,18 @@ import {setCurrentDir, pushToStack} from '../../../../reducers/fileReducer'
 const File = ({file}) => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
-    const openDirHandler = () => {
-        dispatch(pushToStack(currentDir))
-        dispatch(setCurrentDir(file._id))
+    const openDirHandler = (file) => {
+        if (file.type === 'dir') {
+            dispatch(pushToStack(currentDir))
+            dispatch(setCurrentDir(file._id))
+        }
     }
 
     return (
         <div className={'file'}>
             <div className="file-title">
                 <img src={file.type === 'dir' ? folderImg : fileImg} alt={file.name}/>
-                <div className="file-title-name"
-                     onClick={file.type === 'dir' ? () => openDirHandler() : ''}>{file.name}</div>
+                <div className="file-title-name" onClick={() => openDirHandler(file)}>{file.name}</div>
             </div>
             <div className="file-info">
                 <div className="file-info-date">{file.date.slice(0, 10)}</div>
