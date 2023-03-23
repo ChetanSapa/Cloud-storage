@@ -2,39 +2,59 @@ $mainColor: #006A81;
 $textColor: #fff;
 $text: "Droid Sans Mono";
 
-.file{
+.file {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   font-size: 16px;
   font-family: $text;
-  .file-title{
+
+  .file-title {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 49%;
-    .file-title-name{
+
+    .file-title-name-dir {
       padding-left: 2%;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
+        font-weight: bolder;
+        //color: lighten(black, 50%);
+      }
+    }
+
+    .file-title-name-file {
+      padding-left: 2%;
+      cursor: pointer;
+
+      &:hover {
+        //font-weight: bolder;
         color: lighten(black, 50%);
       }
     }
-    img{
-      width: 30px;
+
+    img {
+      width: 50px;
+      padding: 0;
       margin-bottom: 4px;
     }
   }
-  .file-info{
+
+  .file-info {
     display: flex;
     flex-direction: row;
     justify-content: end;
+    align-items: center;
     width: 49%;
-    .file-info-date{
+
+    .file-info-date {
       padding-right: 10%;
     }
-    .file-info-size{
+
+    .file-info-size {
       white-space: nowrap;
     }
   }

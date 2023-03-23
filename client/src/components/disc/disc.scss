@@ -85,5 +85,16 @@ $textColor: #fff;
       font-size: 15px;
     }
   }
-
+}
+.drop-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 75px - 40px);
+  margin: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  font-size: 20px;
+  color: gray;
 }
