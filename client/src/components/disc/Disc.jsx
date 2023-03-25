@@ -52,11 +52,11 @@ const Disc = () => {
                  onDragLeave={drugLeaveHandler}
                  onDragOver={drugEnterHandler}>
                 <div className={"disc-nav"}>
-                    <button className={"disc-btn"} onClick={() => {
+                    <button className={"disc-btn-back"} onClick={() => {
                         backClickHandler()
                     }}>{'<'}</button>
-                    <button className="disc-btn" onClick={() => popupHandler()}>Create</button>
-                    <div className={'disc-btn'}>
+                    <button className="disc-btn-create" onClick={() => popupHandler()}>Create</button>
+                    <div className={'disc-btn-upload'}>
                         <label htmlFor="uploadFile">Upload file</label>
                         <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file"
                                id={'uploadFile'}/>
