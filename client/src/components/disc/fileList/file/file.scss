@@ -41,6 +41,21 @@ $text: "Droid Sans Mono";
       padding: 0;
       margin-bottom: 4px;
     }
+    button{
+      display: none;
+    }
+  }
+
+  .func-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 60%;
+    padding: 10px;
+
+    button {
+      display: none;
+    }
   }
 
   .file-info {
@@ -56,6 +71,32 @@ $text: "Droid Sans Mono";
 
     .file-info-size {
       white-space: nowrap;
+    }
+  }
+}
+.file:hover{
+  .func-btn{
+    button {
+      display: block;
+      font-size: 15px;
+      margin-left: 5px;
+      padding: 5px 10px;
+      border: 1px solid $mainColor;;
+      border-radius: 10px;
+      color: $textColor;
+      background-color: $mainColor;
+      cursor: pointer;
+    }
+    button:hover{
+      display: block;
+      font-size: 15px;
+      margin-left: 5px;
+      padding: 5px 10px;
+      border:1px solid $mainColor ;
+      border-radius: 10px;
+      color: $mainColor;
+      background-color: $textColor;
+      cursor: pointer;
     }
   }
 }

@@ -14,8 +14,8 @@ $textColor: #fff;
     .disc-btn-create,
     .disc-btn-upload {
       font-size: 15px;
-      padding: 10px 15px;
-      border:1px solid $mainColor ; ;
+      padding: 5px 15px;
+      border:1px solid $mainColor;
       border-radius: 10px;
       color: $textColor;
       background-color: $mainColor;
@@ -27,8 +27,8 @@ $textColor: #fff;
       }
       label{
         font: 400 15px Arial;
-        padding: 10px 15px;
-        border:1px solid $mainColor ;
+        padding: 5px 15px;
+        border:1px solid $mainColor;
         border-radius: 10px;
         color: $textColor;
         background-color: $mainColor;
@@ -39,7 +39,7 @@ $textColor: #fff;
     .disc-btn-create:hover,
     .disc-btn-upload:hover {
       font-size: 15px;
-      padding: 10px 15px;
+      padding: 5px 15px;
       border:1px solid $mainColor ;
       border-radius: 10px;
       color: $mainColor;
@@ -53,7 +53,7 @@ $textColor: #fff;
       label{
         font: 400 15px Arial;
         margin: 0;
-        padding: 10px 15px;
+        padding: 5px 15px;
         border:$mainColor ;
         border-radius: 10px;
         color: $mainColor;

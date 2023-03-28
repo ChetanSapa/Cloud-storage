@@ -4,7 +4,7 @@ import folderImg from '../../../../assets/folder.png'
 import fileImg from '../../../../assets/file.png'
 import {useDispatch, useSelector} from 'react-redux'
 import {setCurrentDir, pushToStack} from '../../../../reducers/fileReducer'
-import {downloadFile} from '../../../../actions/file'
+import {downloadFile, deleteFile} from '../../../../actions/file'
 
 const File = ({file}) => {
     const dispatch = useDispatch()
@@ -19,17 +19,23 @@ const File = ({file}) => {
         e.stopPropagation()
         downloadFile(file)
     }
+    const deleteClickHandler = (e) => {
+        e.stopPropagation()
+        console.log(file)
+        dispatch(deleteFile(file))
+    }
 
     return (
         <div className={'file'}>
             <div className="file-title">
                 <img src={file.type === 'dir' ? folderImg : fileImg} alt={file.name}/>
                 <div className={file.type === 'dir' ? 'file-title-name-dir' : 'file-title-name-file'}
-                     onClick={() => openDirHandler(file)}>{file.name}</div>
+                     onClick={() => openDirHandler(file)}
+                >{file.name}</div>
             </div>
             <div className="func-btn">
                 {file.type !== 'dir' && <button onClick={(e) => downloadFileHandler(e)} className="func-btn-download">Download</button>}
-                <button className="func-btn-delete">Delete</button>
+                <button onClick={(e)=>deleteClickHandler(e)} className="func-btn-delete">Delete</button>
             </div>
             <div className="file-info">
                 <div className="file-info-date">{file.date.slice(0, 10)}</div>
