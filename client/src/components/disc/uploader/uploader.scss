@@ -1,0 +1,97 @@
+$mainColor: #006A81;
+$textColor: #fff;
+
+.uploader{
+  width: 30%;
+  padding: 1%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  background-color: rgba(255,255,255,.5);
+  z-index: 5;
+  .uploader-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0);
+    .uploader-header-title{
+      font-size: 15px;
+      color: $mainColor;
+      background-color: rgba(255,255,255,0);
+    }
+    button{
+      width: 10%;
+      border: 1px solid $mainColor;
+      border-radius: 10px;
+      color: $textColor;
+      background-color: $mainColor;
+    }
+    button:hover{
+      width: 10%;
+      border: 1px solid $mainColor;
+      border-radius: 10px;
+      color: $mainColor;
+      background-color: $textColor;
+    }
+  }
+}
+.uploader-file{
+  margin: 2% 0;
+  padding: 1%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0);
+  //z-index: 5;
+  .uploader-file-title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: 2% 0;
+    padding: 0 1%;
+    color: $mainColor;
+    background-color: rgba(255,255,255,0);
+    button{
+      width: 10%;
+      border: 1px solid $mainColor;
+      border-radius: 10px;
+      color: $textColor;
+      background-color: $mainColor;
+    }
+    button:hover{
+      width: 10%;
+      border: 1px solid $mainColor;
+      border-radius: 10px;
+      color: $mainColor;
+      background-color: $textColor;
+    }
+  }
+  .uploader-file-progress-bar{
+    display: flex;
+    height: 1rem;
+    border-radius: 10px;
+    margin: 5px 0;
+    .uploader-file-progress{
+      background-color: green;
+      border-radius: 10px;
+    }
+    .uploader-file-percent{
+      position: absolute;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      font-size: 11px;
+      color: $mainColor;
+      background-color: rgba(255,255,255,0);
+    }
+    .uploader-file-percent-over{
+      position: absolute;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      font-size: 11px;
+      color: $textColor;
+      background-color: rgba(255,255,255,0);
+    }
+  }
+}

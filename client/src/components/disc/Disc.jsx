@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getFiles, uploadFile} from '../../actions/file'
 import FileList from './fileList/FileList'
 import Popup from './Popup'
+import Uploader from './uploader/Uploader'
 import {setCurrentDir, setPopupDisplay} from '../../reducers/fileReducer'
 import './disc.scss'
 
@@ -64,6 +65,7 @@ const Disc = () => {
                 </div>
                 <FileList/>
                 <Popup/>
+                <Uploader/>
             </div>
             :
             <div className={'drop-area'}
