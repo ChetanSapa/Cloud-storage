@@ -5,6 +5,8 @@ import fileImg from '../../../../assets/file.png'
 import {useDispatch, useSelector} from 'react-redux'
 import {setCurrentDir, pushToStack} from '../../../../reducers/fileReducer'
 import {downloadFile, deleteFile} from '../../../../actions/file'
+import sizeFormat from '../../../../utils/sizeFormat'
+
 
 const File = ({file}) => {
     const dispatch = useDispatch()
@@ -39,7 +41,7 @@ const File = ({file}) => {
             </div>
             <div className="file-info">
                 <div className="file-info-date">{file.date.slice(0, 10)}</div>
-                <div className="file-info-size">{Math.floor(file.size / 1000)} KB</div>
+                <div className="file-info-size">{sizeFormat(file.size)}</div>
             </div>
         </div>
     );

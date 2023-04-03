@@ -2,16 +2,25 @@ import axios from 'axios'
 import {setFiles, addFile, deleteFileAction} from '../reducers/fileReducer'
 import {showUploader, addUploadFile, changeUploadProgres} from '../reducers/uploadReducer'
 
-export const getFiles = (dirId) => {
+export const getFiles = (dirId, sort) => {
     return async dispatch => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/files${dirId ? '?parent=' + dirId : ''}`, {
+            let url = `http://localhost:5000/api/files`
+            if (dirId && sort) {
+                url = `http://localhost:5000/api/files?parent=${dirId}&sort=${sort}`
+            }
+            if (dirId) {
+                url = `http://localhost:5000/api/files?parent=${dirId}`
+            }
+            if (sort) {
+                url = `http://localhost:5000/api/files?sort=${sort}`
+            }
+            const response = await axios.get(url, {
                 headers: {Authorization: `Bearer: ${localStorage.getItem('token')}`}
             })
             dispatch(setFiles(response.data))
-            console.log(response.data, localStorage.getItem('token'))
         } catch (e) {
-            console.log(e.response.data.message)
+            alert(e.response.data.message)
         }
     }
 }
@@ -69,7 +78,7 @@ export async function downloadFile(file) {
             Authorization: `Bearer ${localStorage.getItem('token')}`
         }
     })
-    if (response.status === 200){
+    if (response.status === 200) {
         const blob = await response.blob()
         const downloadUrl = window.URL.createObjectURL(blob)
         const link = document.createElement("a")
@@ -80,6 +89,7 @@ export async function downloadFile(file) {
         link.remove()
     }
 }
+
 export const deleteFile = (file) => {
     return async dispatch => {
         try {

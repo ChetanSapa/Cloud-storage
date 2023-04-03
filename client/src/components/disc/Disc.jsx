@@ -12,10 +12,11 @@ const Disc = () => {
     const currentDir = useSelector(state => state.files.currentDir)
     const dirStack = useSelector(state => state.files.dirStack)
     const [dragEnter, setDragEnter] = useState(false)
+    const [sort, setSort] = useState('type')
 
     useEffect(() => {
-        dispatch(getFiles(currentDir))
-    }, [currentDir])
+        dispatch(getFiles(currentDir, sort))
+    }, [currentDir, sort])
 
     const popupHandler = () => {
         dispatch(setPopupDisplay('flex'))
@@ -59,8 +60,15 @@ const Disc = () => {
                     <button className="disc-btn-create" onClick={() => popupHandler()}>Create</button>
                     <div className={'disc-btn-upload'}>
                         <label htmlFor="uploadFile">Upload file</label>
-                        <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file"
-                               id={'uploadFile'}/>
+                        <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file" id={'uploadFile'}/>
+                    </div>
+                    <div className="disc-select">
+                        <span>Sort by:</span>
+                        <select value={sort} onChange={e=>setSort(e.target.value)}>
+                            <option value="name">name</option>
+                            <option value="type">type</option>
+                            <option value="date">date</option>
+                        </select>
                     </div>
                 </div>
                 <FileList/>

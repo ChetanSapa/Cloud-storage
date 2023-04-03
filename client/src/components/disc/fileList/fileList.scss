@@ -1,10 +1,13 @@
 $mainColor: #006A81;
 $textColor: #fff;
 $text: "Droid Sans Mono";
+@import 'src/components/disc/disc';
 
 .file-list{
   padding: 1% 1%;
   border-top: 1px solid $mainColor;
   font-family: $text;
   width: 100%;
+  animation-name: onLoad;
+  animation-duration: .5s;
 }

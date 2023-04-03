@@ -1,6 +1,7 @@
 $mainColor: #006A81;
 $textColor: #fff;
 $text: "Droid Sans Mono";
+@import 'src/components/disc/disc';
 
 .file {
   display: flex;
@@ -9,6 +10,8 @@ $text: "Droid Sans Mono";
   width: 100%;
   font-size: 16px;
   font-family: $text;
+  animation-name: onLoad;
+  animation-duration: .5s;
 
   .file-title {
     display: flex;
