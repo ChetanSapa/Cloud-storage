@@ -6,18 +6,19 @@ export const getFiles = (dirId, sort) => {
     return async dispatch => {
         try {
             let url = `http://localhost:5000/api/files`
-            if (dirId && sort) {
-                url = `http://localhost:5000/api/files?parent=${dirId}&sort=${sort}`
-            }
             if (dirId) {
                 url = `http://localhost:5000/api/files?parent=${dirId}`
             }
             if (sort) {
                 url = `http://localhost:5000/api/files?sort=${sort}`
             }
+            if (dirId && sort) {
+                url = `http://localhost:5000/api/files?parent=${dirId}&sort=${sort}`
+            }
             const response = await axios.get(url, {
                 headers: {Authorization: `Bearer: ${localStorage.getItem('token')}`}
             })
+            console.log(response.data)
             dispatch(setFiles(response.data))
         } catch (e) {
             alert(e.response.data.message)
@@ -101,6 +102,7 @@ export const deleteFile = (file) => {
             dispatch(deleteFileAction(file._id))
             alert(response.data.message)
         } catch (e) {
+            alert('Dir is not empty')
             console.log(e.message)
         }
     }
