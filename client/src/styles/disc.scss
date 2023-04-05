@@ -1,5 +1,4 @@
-$mainColor: #006A81;
-$textColor: #fff;
+@import "commonStyles";
 
 .disc-page {
   display: flex;
@@ -9,19 +8,19 @@ $textColor: #fff;
   .disc-nav {
     display: flex;
     justify-content: flex-start;
-    width: 50%;
-    padding: 1% 1%;
-
+    width: 100%;
+    padding: 2% 12.5%;
+    border-bottom: 1px solid $textColor;
+    background-color: $navBg;
     .disc-btn-back,
     .disc-btn-create,
     .disc-btn-upload {
       font-size: 15px;
       margin-left: 5px;
-      padding: 5px 15px;
-      border: 1px solid $mainColor;
-      border-radius: 10px;
+      padding: 10px 30px;
+      border: none;
       color: $textColor;
-      background-color: $mainColor;
+      background-color: $btnColor;
       cursor: pointer;
 
       input {
@@ -31,12 +30,10 @@ $textColor: #fff;
       }
 
       label {
-        font: 400 15px Arial;
-        padding: 5px 15px;
-        border: 1px solid $mainColor;
-        border-radius: 10px;
+        //font: 400 15px Arial;
+        //padding: 5px 15px;
         color: $textColor;
-        background-color: $mainColor;
+        background-color: $btnColor;
         cursor: pointer;
       }
     }
@@ -44,12 +41,8 @@ $textColor: #fff;
     .disc-btn-back:hover,
     .disc-btn-create:hover,
     .disc-btn-upload:hover {
-      font-size: 15px;
-      padding: 5px 15px;
-      border: 1px solid $mainColor;
-      border-radius: 10px;
       color: $mainColor;
-      background-color: $textColor;
+      background-color: lighten($btnColor, 5%);
       cursor: pointer;
 
       input {
@@ -59,13 +52,8 @@ $textColor: #fff;
       }
 
       label {
-        font: 400 15px Arial;
-        margin: 0;
-        padding: 5px 15px;
-        border: $mainColor;
-        border-radius: 10px;
         color: $mainColor;
-        background-color: $textColor;
+        background-color: lighten($btnColor, 5%);
         cursor: pointer;
       }
     }
@@ -76,10 +64,10 @@ $textColor: #fff;
       align-items: center;
       text-align: center;
       margin-left: 20px;
-      border-radius: 5px;
+      background-color: $navBg;
       span{
         padding-right: 5px;
-        font: 400 13px Arial;
+        background-color: $navBg;
       }
       select{
         padding: 5px;
@@ -159,11 +147,4 @@ $textColor: #fff;
   color: gray;
 }
 
-@keyframes onLoad {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
-}
+

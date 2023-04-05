@@ -1,5 +1,5 @@
 import React from 'react';
-import './navbar.scss'
+import '../../styles/navbar.scss'
 import {NavLink} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {logout} from '../../reducers/userReducer'
@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <div className={'navbar'}>
             <div className={'logo'}>
-                <div className={'logo_title'}>Cloud storage</div>
+                <div className={'logo_title'}>Simple Cloud Storage</div>
             </div>
             <div className={'navbar_btn'}>
                 {!isAuth && <NavLink to={'/login'} className={'navbar_auth'}>Login</NavLink>}

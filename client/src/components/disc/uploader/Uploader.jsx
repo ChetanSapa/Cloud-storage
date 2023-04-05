@@ -1,5 +1,5 @@
 import React from 'react';
-import './uploader.scss'
+import '../../../styles/uploader.scss'
 import UploadFile from './UploaderFile'
 import {useSelector, useDispatch} from 'react-redux'
 import {hideUploader} from '../../../reducers/uploadReducer'

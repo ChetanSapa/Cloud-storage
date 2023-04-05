@@ -1,0 +1,39 @@
+@import "commonStyles";
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3% 0 5% 0;
+  width: 100%;
+  background-color: $navBg;
+  .logo {
+    padding-left: 12.5%;
+    font-size: 34px;
+    font-weight: bold;
+    background-color: $navBg;
+  }
+  .logo_title{
+    background-color: $navBg;
+  }
+}
+
+.navbar_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 12.5%;
+  background-color: $navBg;
+  .navbar_auth {
+    font-size: 18px;
+    padding-left: 15px;
+    color: $textColor;
+    background-color: $navBg;
+  }
+}
+
+.navbar-registration {
+  font-size: 18px;
+  color: $textColor;
+  background-color: $navBg;
+}

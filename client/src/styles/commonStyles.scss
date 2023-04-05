@@ -1,0 +1,17 @@
+$font: 'Basic', sans-serif;
+$fileFont: "Droid Sans Mono";
+$mainFont: 'Georgia', serif;
+$mainColor: #fefbe9;
+$textColor: #183a1d;
+$navBg: #e1eebb;
+$btnColor: #f0a04b;
+
+
+@keyframes onLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}

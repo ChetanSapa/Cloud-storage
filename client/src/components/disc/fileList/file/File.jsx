@@ -1,5 +1,5 @@
 import React from 'react';
-import './file.scss'
+import '../../../../styles/file.scss'
 import folderImg from '../../../../assets/folder.png'
 import fileImg from '../../../../assets/file.png'
 import {useDispatch, useSelector} from 'react-redux'

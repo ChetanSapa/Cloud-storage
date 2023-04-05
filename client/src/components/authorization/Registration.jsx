@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Input from '../input/input'
-import './authorization.scss'
-import '../navbar/navbar.scss'
+import '../../styles/authorization.scss'
+import '../../styles/navbar.scss'
 import {NavLink} from 'react-router-dom'
 import {registration} from '../../actions/user'
 

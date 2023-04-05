@@ -1,0 +1,10 @@
+@import 'commonStyles';
+
+.file-list{
+  padding: 2% 1%;
+  font-family: $fileFont;
+  width: 75%;
+  align-self: center;
+  animation-name: onLoad;
+  animation-duration: .5s;
+}

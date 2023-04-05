@@ -1,6 +1,6 @@
 import {React, useEffect} from "react";
 import Navbar from './navbar/Navbar'
-import './app.scss'
+import '../styles/app.scss'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Registration from './authorization/Registration'
 import Authorization from './authorization/Authorization'

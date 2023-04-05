@@ -1,5 +1,5 @@
 import React from 'react';
-import '../authorization/authorization.scss'
+import '../../styles/authorization.scss'
 
 const Input = (props) => {
 

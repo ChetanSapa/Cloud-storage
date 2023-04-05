@@ -1,20 +1,20 @@
-$font: "Arial Black", sans-serif ;
+@import "commonStyles";
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: $mainColor;
   a, button {
     cursor: pointer;
   }
 }
 .app{
-  font-family: $font;
+  font-family: Georgia serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
 }
 .routes {

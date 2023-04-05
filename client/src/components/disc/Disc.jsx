@@ -5,7 +5,7 @@ import FileList from './fileList/FileList'
 import Popup from './Popup'
 import Uploader from './uploader/Uploader'
 import {setCurrentDir, setPopupDisplay} from '../../reducers/fileReducer'
-import './disc.scss'
+import '../../styles/disc.scss'
 
 const Disc = () => {
     const dispatch = useDispatch()
