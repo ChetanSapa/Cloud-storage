@@ -1,15 +1,28 @@
-@import "commonStyles";
+@import "var";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: $mainColor;
+
   a, button {
+    font-family: $mainFont;
+    border: none;
+    color: $textColor;
+    background-color: $btnColor;
     cursor: pointer;
   }
+
+  a:hover,
+  button:hover {
+    border: none;
+    background-color: lighten($btnColor, 5%);
+    color: $textColor;
+  }
 }
-.app{
+
+.app {
   font-family: $mainFont;
   font-size: 15px;
   display: flex;
@@ -17,7 +30,4 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
-}
-.routes {
-
 }

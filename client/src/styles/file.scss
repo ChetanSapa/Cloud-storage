@@ -1,4 +1,4 @@
-@import 'commonStyles';
+@import 'var';
 
 .file {
   display: flex;
@@ -90,19 +90,13 @@
       font-size: 15px;
       margin-left: 5px;
       padding: 5px 30px;
-      border: none;
-      color: $textColor;
-      background-color: $btnColor;
-      cursor: pointer;
     }
     button:hover{
       display: block;
       font-size: 15px;
       margin-left: 5px;
       padding: 5px 30px;
-      color: $mainColor;
-      background-color: lighten($btnColor, 5%);
-      cursor: pointer;
+        color: $mainColor;
     }
   }
 }

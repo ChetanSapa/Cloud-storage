@@ -1,4 +1,4 @@
-@import "commonStyles";
+@import "var";
 
 .navbar {
   display: flex;
@@ -34,6 +34,5 @@
 
 .navbar-registration {
   font-size: 18px;
-  color: $textColor;
   background-color: $navBg;
 }

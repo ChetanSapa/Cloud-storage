@@ -1,4 +1,4 @@
-@import "commonStyles";
+@import "var";
 
 .disc-page {
   display: flex;
@@ -18,10 +18,7 @@
       font-size: 15px;
       margin-left: 5px;
       padding: 10px 30px;
-      border: none;
-      color: $textColor;
       background-color: $btnColor;
-      cursor: pointer;
 
       input {
         display: none;
@@ -30,7 +27,6 @@
       }
 
       label {
-        //padding: 5px 15px;
         color: $textColor;
         background-color: $btnColor;
         cursor: pointer;
@@ -109,8 +105,6 @@
       button {
         padding: .5% 2%;
         border-radius: 5px;
-        color: $textColor;
-        background-color: $mainColor;
       }
     }
 
@@ -123,10 +117,6 @@
     button {
       align-self: flex-end;
       padding: 2% 4%;
-      border-radius: 5px;
-      color: $textColor;
-      border-color: $mainColor;
-      background-color: $mainColor;
       font-size: 15px;
     }
   }
@@ -139,7 +129,7 @@
   align-items: center;
   width: 100%;
   height: calc(100vh - 75px - 160px);
-  border: 1px solid lightgray;
+  border: 1px solid lighten($textColor, 65%);
   border-radius: 10px;
   font-size: 20px;
   color: gray;

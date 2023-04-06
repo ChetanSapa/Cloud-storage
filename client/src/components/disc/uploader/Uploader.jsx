@@ -8,7 +8,6 @@ const Uploader = () => {
     const files = useSelector(state => state.upload.files)
     const isVisible = useSelector(state => state.upload.isVisible)
     const dispatch = useDispatch()
-    console.log(isVisible)
 
     return (isVisible &&
         <div className={'uploader'}>
