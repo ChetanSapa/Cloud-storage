@@ -10,7 +10,8 @@
   }
 }
 .app{
-  font-family: Georgia serif;
+  font-family: $mainFont;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;

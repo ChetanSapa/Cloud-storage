@@ -48,7 +48,7 @@ const Disc = () => {
         files.forEach(file => dispatch(uploadFile(file, currentDir)))
         setDragEnter(false)
     }
-    return (!dragEnter ?
+    return (
             <div className={'disc-page'}
                  onDragEnter={drugEnterHandler}
                  onDragLeave={drugLeaveHandler}
@@ -71,18 +71,22 @@ const Disc = () => {
                         </select>
                     </div>
                 </div>
-                <FileList/>
+                {!dragEnter ?
+                    <FileList/>
+                    :
+                    <div className={'drop-area'}
+                         onDrop={dropHandler}
+                         onDragEnter={drugEnterHandler}
+                         onDragLeave={drugLeaveHandler}
+                         onDragOver={drugEnterHandler}>
+                        Drop file here
+                    </div>
+                }
+
                 <Popup/>
                 <Uploader/>
             </div>
-            :
-            <div className={'drop-area'}
-                 onDrop={dropHandler}
-                 onDragEnter={drugEnterHandler}
-                 onDragLeave={drugLeaveHandler}
-                 onDragOver={drugEnterHandler}>
-                Drop file here
-            </div>
+
     );
 };
 

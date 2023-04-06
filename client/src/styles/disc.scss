@@ -30,7 +30,6 @@
       }
 
       label {
-        //font: 400 15px Arial;
         //padding: 5px 15px;
         color: $textColor;
         background-color: $btnColor;
@@ -111,7 +110,6 @@
         padding: .5% 2%;
         border-radius: 5px;
         color: $textColor;
-        border-color: $mainColor;
         background-color: $mainColor;
       }
     }
@@ -137,10 +135,10 @@
 .drop-area {
   display: flex;
   justify-content: center;
+  align-self: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 75px - 40px);
-  margin: 20px;
+  height: calc(100vh - 75px - 160px);
   border: 1px solid lightgray;
   border-radius: 10px;
   font-size: 20px;
