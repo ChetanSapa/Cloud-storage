@@ -38,8 +38,8 @@ class FileController {
                 case 'type':
                     files = await File.find({user: req.user.id, parent: req.query.parent}).sort({type: 1})
                     break
-                case 'size':
-                    files = await File.find({user: req.user.id, parent: req.query.parent}).sort({size: 1})
+                case 'date':
+                    files = await File.find({user: req.user.id, parent: req.query.parent}).sort({date: 1})
                     break
                 default:
                     files = await File.find({user: req.user.id, parent: req.query.parent})
@@ -127,6 +127,18 @@ class FileController {
         } catch (e) {
             console.log(e)
             return res.status(400).json({message: 'Dir is not empty'})
+        }
+    }
+
+    async searchFile(req, res) {
+        try{
+            const searchName = req.query.search
+            let files = await File.find({user: req.user.id})
+            files = files.filter(file => file.name.includes(searchName))
+            return res.json(files)
+        }catch (e) {
+            console.log(e)
+            return res.status(400).json({message: 'Search error'})
         }
     }
 }

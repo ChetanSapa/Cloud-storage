@@ -6,11 +6,13 @@ import Popup from './Popup'
 import Uploader from './uploader/Uploader'
 import {setCurrentDir, setPopupDisplay} from '../../reducers/fileReducer'
 import '../../styles/disc.scss'
+import '../../styles/loader.scss'
 
 const Disc = () => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
     const dirStack = useSelector(state => state.files.dirStack)
+    const loader = useSelector(state => state.app.loader)
     const [dragEnter, setDragEnter] = useState(false)
     const [sort, setSort] = useState('type')
 
@@ -48,44 +50,52 @@ const Disc = () => {
         files.forEach(file => dispatch(uploadFile(file, currentDir)))
         setDragEnter(false)
     }
-    return (
-            <div className={'disc-page'}
-                 onDragEnter={drugEnterHandler}
-                 onDragLeave={drugLeaveHandler}
-                 onDragOver={drugEnterHandler}>
-                <div className={"disc-nav"}>
-                    <button className={"disc-btn-back"} onClick={() => {
-                        backClickHandler()
-                    }}>{'<'}</button>
-                    <button className="disc-btn-create" onClick={() => popupHandler()}>Create</button>
-                    <div className={'disc-btn-upload'}>
-                        <label htmlFor="uploadFile">Upload file</label>
-                        <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file" id={'uploadFile'}/>
-                    </div>
-                    <div className="disc-select">
-                        <span>Sort by:</span>
-                        <select value={sort} onChange={e=>setSort(e.target.value)}>
-                            <option value="name">name</option>
-                            <option value="type">type</option>
-                            <option value="date">date</option>
-                        </select>
-                    </div>
-                </div>
-                {!dragEnter ?
-                    <FileList/>
-                    :
-                    <div className={'drop-area'}
-                         onDrop={dropHandler}
-                         onDragEnter={drugEnterHandler}
-                         onDragLeave={drugLeaveHandler}
-                         onDragOver={drugEnterHandler}>
-                        Drop file here
-                    </div>
-                }
-
-                <Popup/>
-                <Uploader/>
+    if (loader) {
+        return (
+            <div className={'loader'}>
+                <div className="lds-dual-ring"></div>
             </div>
+        )
+    }
+    return (
+        <div className={'disc-page'}
+             onDragEnter={drugEnterHandler}
+             onDragLeave={drugLeaveHandler}
+             onDragOver={drugEnterHandler}>
+            <div className={"disc-nav"}>
+                <button className={"disc-btn-back"} onClick={() => {
+                    backClickHandler()
+                }}>{'<'}</button>
+                <button className="disc-btn-create" onClick={() => popupHandler()}>Create</button>
+                <div className={'disc-btn-upload'}>
+                    <label htmlFor="uploadFile">Upload file</label>
+                    <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file"
+                           id={'uploadFile'}/>
+                </div>
+                <div className="disc-select">
+                    <span>Sort by:</span>
+                    <select value={sort} onChange={e => setSort(e.target.value)}>
+                        <option value="type">name</option>
+                        <option value="name">type</option>
+                        <option value="date">date</option>
+                    </select>
+                </div>
+            </div>
+            {!dragEnter ?
+                <FileList/>
+                :
+                <div className={'drop-area'}
+                     onDrop={dropHandler}
+                     onDragEnter={drugEnterHandler}
+                     onDragLeave={drugLeaveHandler}
+                     onDragOver={drugEnterHandler}>
+                    Drop file here
+                </div>
+            }
+
+            <Popup/>
+            <Uploader/>
+        </div>
 
     );
 };
