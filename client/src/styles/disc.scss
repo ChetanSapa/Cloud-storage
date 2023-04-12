@@ -1,4 +1,5 @@
 @import "var";
+$list : 'list.svg';
 
 .disc-page {
   display: flex;
@@ -69,6 +70,24 @@
         border-radius: 5px;
       }
     }
+    .disc-view{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 59%;
+      //margin: 2px;
+      border: none;
+      background-color: $navBg;
+      cursor: pointer;
+      button{
+        margin-left: 5px;
+        background-color: $navBg;
+        svg{
+          width: 30px;
+          background-color: $navBg;
+        }
+      }
+    }
   }
 }
 
@@ -96,15 +115,19 @@
     .popup-header {
       display: flex;
       justify-content: space-between;
+      background-color: #fff;
 
       .popup-title {
         display: flex;
         justify-content: space-between;
+        background-color: #fff;
       }
 
       button {
         padding: .5% 2%;
-        border-radius: 5px;
+      }
+      button:hover{
+        color: #fff;
       }
     }
 
@@ -118,6 +141,9 @@
       align-self: flex-end;
       padding: 2% 4%;
       font-size: 15px;
+    }
+    button:hover{
+      color: #fff;
     }
   }
 }

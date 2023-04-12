@@ -21,8 +21,7 @@
 .navbar_btn {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  //width: 28%;
+  align-items: center;
   padding-right: 12.5%;
   background-color: $navBg;
   .navbar_auth {
@@ -33,7 +32,8 @@
   }
   input{
     margin-right: 10%;
-    align-self: end;
+    padding: 5px;
+    outline:none;
   }
 }
 

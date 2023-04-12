@@ -4,7 +4,7 @@ import {getFiles, uploadFile} from '../../actions/file'
 import FileList from './fileList/FileList'
 import Popup from './Popup'
 import Uploader from './uploader/Uploader'
-import {setCurrentDir, setPopupDisplay} from '../../reducers/fileReducer'
+import {setCurrentDir, setPopupDisplay, setView} from '../../reducers/fileReducer'
 import '../../styles/disc.scss'
 import '../../styles/loader.scss'
 
@@ -63,9 +63,7 @@ const Disc = () => {
              onDragLeave={drugLeaveHandler}
              onDragOver={drugEnterHandler}>
             <div className={"disc-nav"}>
-                <button className={"disc-btn-back"} onClick={() => {
-                    backClickHandler()
-                }}>{'<'}</button>
+                <button className={"disc-btn-back"} onClick={() => {backClickHandler()}}>{'<'}</button>
                 <button className="disc-btn-create" onClick={() => popupHandler()}>Create</button>
                 <div className={'disc-btn-upload'}>
                     <label htmlFor="uploadFile">Upload file</label>
@@ -79,6 +77,46 @@ const Disc = () => {
                         <option value="name">type</option>
                         <option value="date">date</option>
                     </select>
+                </div>
+                <div className="disc-view">
+                    <button ><svg onClick={()=>dispatch(setView('list'))} width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title/>
+                        <g id="Complete">
+                            <g id="align-justify">
+                                <g>
+                                    <polygon fill="#ffffff" points="20 18 4 18 4 18 20 18 20 18" stroke="#000000" strokeLinecap="round"
+                                             strokeLinejoin="round" strokeWidth="2"/>
+                                    <polygon fill="#ffffff" points="20 14 4 14 4 14 20 14 20 14" stroke="#000000" strokeLinecap="round"
+                                             strokeLinejoin="round" strokeWidth="2"/>
+                                    <polygon fill="#ffffff" points="20 10 4 10 4 10 20 10 20 10" stroke="#000000" strokeLinecap="round"
+                                             strokeLinejoin="round" strokeWidth="2"/>
+                                    <polygon fill="#ffffff" points="20 6 4 6 4 6 20 6 20 6" stroke="#000000" strokeLinecap="round"
+                                             strokeLinejoin="round" strokeWidth="2"/>
+                                </g>
+                            </g>
+                        </g>
+                    </svg></button>
+                    <button ><svg onClick={()=>dispatch(setView('plate'))} width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title/>
+                        <g id="Complete">
+                            <g id="grid">
+                                <g>
+                                    <rect fill="none" height="7" stroke="#000000" strokeLinecap="round" strokeLinejoin="round"
+                                          strokeWidth="2" width="7" x="14.5" y="2.5"/>
+
+                                    <rect fill="none" height="7" stroke="#000000" strokeLinecap="round" strokeLinejoin="round"
+                                          strokeWidth="2" width="7" x="14.5" y="14.5"/>
+
+                                    <rect fill="none" height="7" stroke="#000000" strokeLinecap="round" strokeLinejoin="round"
+                                          strokeWidth="2" width="7" x="2.5" y="2.5"/>
+
+                                    <rect fill="none" height="7" stroke="#000000" strokeLinecap="round" strokeLinejoin="round"
+                                          strokeWidth="2" width="7" x="2.5" y="14.5"/>
+
+                                </g>
+                            </g>
+                        </g>
+                    </svg></button>
                 </div>
             </div>
             {!dragEnter ?
