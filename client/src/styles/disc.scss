@@ -18,7 +18,7 @@ $list : 'list.svg';
     .disc-btn-upload {
       font-size: 15px;
       margin-left: 5px;
-      padding: 10px 30px;
+      padding: 12px 30px;
       background-color: $btnColor;
 
       input {
@@ -74,7 +74,7 @@ $list : 'list.svg';
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      width: 59%;
+      width: 44%;
       //margin: 2px;
       border: none;
       background-color: $navBg;
@@ -87,6 +87,12 @@ $list : 'list.svg';
           background-color: $navBg;
         }
       }
+    }
+    .search-input{
+      border-radius: 5px;
+      margin: 7px 10px;
+      padding: 5px;
+      outline:none;
     }
   }
 }

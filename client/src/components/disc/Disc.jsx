@@ -5,16 +5,21 @@ import FileList from './fileList/FileList'
 import Popup from './Popup'
 import Uploader from './uploader/Uploader'
 import {setCurrentDir, setPopupDisplay, setView} from '../../reducers/fileReducer'
+import {showLoader} from '../../reducers/appReducer'
+import {searchFile} from '../../actions/file'
 import '../../styles/disc.scss'
 import '../../styles/loader.scss'
 
 const Disc = () => {
     const dispatch = useDispatch()
+    const isAuth = useSelector(state => state.user.isAuth)
     const currentDir = useSelector(state => state.files.currentDir)
     const dirStack = useSelector(state => state.files.dirStack)
     const loader = useSelector(state => state.app.loader)
     const [dragEnter, setDragEnter] = useState(false)
     const [sort, setSort] = useState('type')
+    const [searchValue, setSearchValue] = useState('')
+    const [searchTimeout, setSearchTimeout] = useState(false)
 
     useEffect(() => {
         dispatch(getFiles(currentDir, sort))
@@ -50,6 +55,21 @@ const Disc = () => {
         files.forEach(file => dispatch(uploadFile(file, currentDir)))
         setDragEnter(false)
     }
+    const searchChangeHandler = (e) => {
+        setSearchValue(e.target.value)
+        if (searchTimeout != false) {
+            clearTimeout(searchTimeout)
+        }
+        // dispatch(showLoader())
+        if (e.target.value != '') {
+            setSearchTimeout(setTimeout((value) => {
+                dispatch(showLoader())
+                dispatch(searchFile(value))
+            }, 500, e.target.value))
+        } else {
+            dispatch(getFiles(currentDir))
+        }
+    }
     if (loader) {
         return (
             <div className={'loader'}>
@@ -78,6 +98,14 @@ const Disc = () => {
                         <option value="date">date</option>
                     </select>
                 </div>
+                {isAuth && <input
+                    autoFocus
+                    className={'search-input'}
+                    value={searchValue}
+                    onChange={e => searchChangeHandler(e)}
+                    type="text"
+                    placeholder={'Search...'}
+                />}
                 <div className="disc-view">
                     <button ><svg onClick={()=>dispatch(setView('list'))} width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <title/>

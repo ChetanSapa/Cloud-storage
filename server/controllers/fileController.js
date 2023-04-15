@@ -3,6 +3,7 @@ const User = require('../models/User')
 const File = require('../models/File')
 const config = require('config')
 const fs = require('fs')
+const Uuid = require('uuid');
 
 class FileController {
     async createDir(req, res) {
@@ -131,14 +132,42 @@ class FileController {
     }
 
     async searchFile(req, res) {
-        try{
+        try {
             const searchName = req.query.search
             let files = await File.find({user: req.user.id})
             files = files.filter(file => file.name.includes(searchName))
             return res.json(files)
-        }catch (e) {
+        } catch (e) {
             console.log(e)
             return res.status(400).json({message: 'Search error'})
+        }
+    }
+
+    async uploadAvatar(req, res) {
+        try {
+            const file = req.files.file
+            const user = await User.findById(req.user.id)
+            const avatarName = Uuid.v4() + '.jpg'
+            file.mv(config.get('staticPath') + '\\' + avatarName)
+            user.avatar = avatarName
+            await user.save()
+            return res.status(200).json(user)
+        } catch (e) {
+            console.log(e)
+            return res.status(400).json({message: 'Error upload avatar'})
+        }
+    }
+    async deleteAvatar(req, res) {
+        try {
+            const user = await User.findById(req.user.id)
+            fs.unlinkSync(config.get('staticPath') + '\\' + user.avatar)
+            user.avatar = null
+            await user.save()
+            return res.status(200).json(user)
+
+        } catch (e) {
+            console.log(e)
+            return res.status(400).json('Error delete avatar')
         }
     }
 }

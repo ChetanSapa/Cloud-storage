@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Registration from './authorization/Registration'
 import Authorization from './authorization/Authorization'
 import Disc from './disc/Disc'
+import Profile from '../components/profile/profile'
 import {useSelector, useDispatch} from 'react-redux'
 import {auth} from '../actions/user'
 
@@ -29,6 +30,7 @@ function App() {
                     </Routes>:
                     <Routes>
                         <Route path={'/'} exact element={<Disc/>}/>
+                        <Route path={'/profile'} exact element={<Profile/>}/>
                         <Route path="*" element={<Navigate to ="/" />}/>
                     </Routes>
                 }

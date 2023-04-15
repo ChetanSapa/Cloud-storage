@@ -30,14 +30,27 @@
     color: $textColor;
     background-color: $navBg;
   }
-  input{
-    margin-right: 10%;
-    padding: 5px;
-    outline:none;
+
+  img{
+    width: 35px;
+    margin-left: 10px;
+    background-color: $navBg;
   }
 }
 
 .navbar-registration {
   font-size: 18px;
+  background-color: $navBg;
+}
+.avatar{
+  width: 40px;
+  margin: 0 10px;
+  background-color: $navBg;
+  a{
+    padding: 0;
+    margin: 0;
+  }
+}
+.avatar:hover{
   background-color: $navBg;
 }
