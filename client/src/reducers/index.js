@@ -4,7 +4,7 @@ import {fileReducer} from './fileReducer'
 import {userReducer} from './userReducer'
 import {uploadReducer} from './uploadReducer'
 import {appReducer} from './appReducer'
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 const rootReducer = combineReducers({
