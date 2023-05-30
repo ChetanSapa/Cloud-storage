@@ -8,8 +8,7 @@ export const registration = async (email, password) => {
                 email,
                 password
             },
-        )}
-        console.log(response.data.message)
+        )
     } catch (e) {
         console.log(e)
     }
@@ -21,10 +20,11 @@ export const login = (email, password) => {
                     email,
                     password
                 },
-        })
+            )
             dispatch(setUser(response.data.user))
             localStorage.setItem('token', response.data.token)
-        } catch (e) {
+        } catch
+            (e) {
             console.log(e.response.data.message)
         }
     }

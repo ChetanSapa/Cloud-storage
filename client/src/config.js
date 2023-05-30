@@ -1,1 +1,1 @@
-export const API_URL = 'https://web-tec.run.place/server'
+export const API_URL = 'https://web-tec.run.place/server/'
