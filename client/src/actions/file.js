@@ -2,7 +2,7 @@ import axios from 'axios'
 import {setFiles, addFile, deleteFileAction} from '../reducers/fileReducer'
 import {showUploader, addUploadFile, changeUploadProgres} from '../reducers/uploadReducer'
 import {showLoader, hideLoader} from '../reducers/appReducer'
-import API_URL from '../config'
+import {API_URL} from '../config'
 
 export const getFiles = (dirId, sort) => {
     return async dispatch => {
